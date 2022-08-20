@@ -1,0 +1,12 @@
+# Tomcat
+server:
+  port: 8088
+
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: project-admin
+  profiles:
+    # 环境配置
+    active: dev
