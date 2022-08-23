@@ -1,12 +1,30 @@
-# Tomcat
 server:
   port: 8088
+  servlet:
+    context-path: /project-admin
 
-# Spring
 spring:
   application:
-    # 应用名称
     name: project-admin
-  profiles:
-    # 环境配置
-    active: dev
+  security:
+    user:
+      name: admin
+      password: admin
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: 04d5bdfe-c99d-4b62-95b2-fb9d0e46ba23
+        group: DEFAULT_GROUP
+
+#健康监测
+management:
+  server:
+    port: 17003
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
