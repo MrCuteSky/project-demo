@@ -1,0 +1,27 @@
+server:
+  port: 7001
+  servlet:
+    context-path: /provider
+
+spring:
+  application:
+    name: provider
+  profiles:
+    active: dev
+
+# Admin 实时日志
+logging:
+  file:
+    name: logs/${spring.application.name}/console.log
+
+management:
+  server:
+    port: 17004
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
